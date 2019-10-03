@@ -1,0 +1,1 @@
+INSERT INTO theOffice (season, episode, episode_name, episode_plot) VALUES ('1', '1', 'Pilot', 'When a documentary crew arrives at Mifflin, manager Michael Scott attempts to paint a rosy picture but fails after learning the company will be downsizing.');

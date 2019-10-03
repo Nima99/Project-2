@@ -2,6 +2,8 @@ var db = require("../models");
 //requiring passport
 var passport = require("../config/passport");
 
+var axios = require("axios");
+
 module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json(req.user);
@@ -41,6 +43,40 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  // Hit on the movie database
+
+  app.post("/api/daily-survey-results", function(req, res) {
+    console.log("hi");
+
+    var movieURL =
+      "https://api.themoviedb.org/3/discover/movie?api_key=362b6936916611f650df82861a545e72&include_video=true&sort_by=popularity.desc";
+
+    // movieURL += "&include_adult=" + req.body.newSurvey.adult; // newSurvey.answers[0]
+
+    // var withGenre = req.body.newSurvey.genre.join('%22')
+
+    // movieURL += "&with_genres=" + withGenre; // newSurvey.answers[1]
+
+    // var withoutGenre = req.body.newSurvey.notGenre.join('%22')
+
+    // movieURL += "&without_genres=" + withoutGenre; // newSurvey.answers[2]
+
+    // movieURL += "&primary_release_date.gte=" + req.body.newSurvey.year; // newSurvey.answers[3]
+
+    
+
+    async function getData(){
+    var response = await axios({
+      url: movieURL
+    }).then(data => data);
+    return response;
+   }
+   
+
+    console.log(response);
+    res.json(response);
   });
 
   /////// Pre-Given Code Below- Get all examples
