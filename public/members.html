@@ -14,24 +14,35 @@
   
 </head>
 
-<body>
-  
+<body id="bgColor">
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
+    <div class="fullscreen-bg" id="videoBlock">
+        <video class="fullscreen-bg-video" id="video" preload="auto" autoplay="autoplay" loop = "loop"> 
+          <source autoplay="autoplay" src= "https://www.videvo.net/videvo_files/converted/2013_09/preview/DiscoLightsVidevo.mov17335.mp4" type="video/mp4">
+          <source autoplay="autoplay" src= "https://www.videvo.net/videvo_files/converted/2013_09/preview/DiscoLightsVidevo.mov17335.webm" type="video/webm">
+          <source autoplay="autoplay" src= "https://www.videvo.net/videvo_files/converted/2013_09/preview/DiscoLightsVidevo.mov17335.ogg" type="video/ogg">
+        </video>
+    </div>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="/public/members.html">
+            binge.Shuffle
+          </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li>
             <a class="navbar-brand" href="/logout">
               Logout
             </a>
-            <a class="navbar-brand" href="/suggestions">
-              Suggestions
-            </a>
-            <a class="navbar-brand" href="/search">
-              Search
-            </a>
-          </div>
-        </div>
-      </nav>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
 
 
     
@@ -44,17 +55,17 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-5 col-md-offset-3">
+      <div class="col-md-5 col-md-offset-3 text-white">
         <h2>Welcome <span class="member-name"></span></h2>
       </div>
     </div>
   </div>
 
 
-  <div class="container">
+  <div id="questionConatiner" class="container">
   <!--- Trivia Questions-->
     <div class="row">
-      <div class="col-md-6 quiz-questions">
+      <div class="col-md-12 quiz-questions">
         <h1 class="text-center"> Your Daily Quiz!</h1>
         <p class="text-center"> By taking our daily quiz, we can help you find what movie or tv show that best suits your
           preference!</p>
