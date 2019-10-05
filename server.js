@@ -1,6 +1,5 @@
 require("dotenv").config();
 var express = require("express");
-var exphbs = require("express-handlebars");
 var session = require("express-session");
 //requiring passport
 var passport = require("./config/passport");
@@ -21,15 +20,6 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
