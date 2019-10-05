@@ -51,23 +51,24 @@ module.exports = function(app) {
     // save req.body to database
 
     var movieURL =
-      "https://api.themoviedb.org/3/discover/movie?api_key=362b6936916611f650df82861a545e72&include_video=true&sort_by=popularity.desc";
+      "https://api.themoviedb.org/3/discover/movie?api_key=362b6936916611f650df82861a545e72&language=en-US&include_video=true&sort_by=popularity.desc";
 
     movieURL += "&include_adult=" + req.body.adult; // newSurvey.answers[0]
 
-    var withGenre = req.body.genre.join("%22");
+    var withGenre = req.body.genre.join("%2C%");
 
     movieURL += "&with_genres=" + withGenre; // newSurvey.answers[1]
 
-    var withoutGenre = req.body.notGenre.join("%22");
+    var withoutGenre = req.body.notGenre.join("%2C%");
 
     movieURL += "&without_genres=" + withoutGenre; // newSurvey.answers[2]
 
     movieURL += "&primary_release_date.gte=" + req.body.year; // newSurvey.answers[3]
 
-    axios(movieURL).then(function(response) {
-      return res.json(response.data);
-    });
+    return res.json(movieURL);
+    // axios(movieURL).then(function(response) {
+    //   return res.json(response.data);
+    // });
   });
 
   /////// Pre-Given Code Below- Get all examples
