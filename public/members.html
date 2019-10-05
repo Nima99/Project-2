@@ -1,34 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Passport Authentication</title>
+  <title>Members Only</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <link href= "node_modules/sweetalert2/dist/sweetalert2.css" rel="stylesheet"/>
+  <link href="./styles/styles.css">
+  
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/logout">
-          Logout
-        </a>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
-    </div>
-  </div>
+  
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/logout">
+              Logout
+            </a>
+            <a class="navbar-brand" href="/suggestions">
+              Suggestions
+            </a>
+            <a class="navbar-brand" href="/search">
+              Search
+            </a>
+          </div>
+        </div>
+      </nav>
 
 
+    
+      <!--------------------End Of Naviagtion Bar------------------------>
+<!---------------->
+
+<div class= "container">
+  <h1>Sweet Alert</h1>
+  <button onclick="sweetalertclick()" type="button" class="w3-button w3-blue">try me!</button>
+</div>
+  <!---------------->
+   
+  <!---------------->
+  <header class= "v-header container">
+      <div class= "fullscreen-video-wrap">
+        <video src= "code.mov" autoplay= "true" 
+      loop = "true"></video>
+      </div>
+      <div class= "header-overlay"></div>
+      <div class="header-content">
+          <h2>Welcome <span class="member-name"></span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At natus qui totam doloremque exercitationem nihil quidem fugit animi veniam! Doloremque beatae fugiat assumenda ipsum accusantium laborum error esse asperiores facere!</p>
+      <a href = "#" class= "btn">Read More</a>
+      </div>
+    </header>
+  
+  
+  <!----------------------------------------------->
+ 
+  <!-------------------------------------------->
+
+  <!--------------------------Questions-->
+ 
   <!--- Trivia Questions-->
+
+  <div class= "quiz-questions">
 
   <h1 class="text-center"> Your Daily Quiz!</h1>
   <p class="text-center"> By taking our daily quiz, we can help you find what movie or tv show that best suits your
@@ -54,7 +90,8 @@
           <input type="checkbox" name="optradio" class="optradio" value="16">Animation</label>
       <label class="form-check form-check-inline text-mysize">
         <input type="checkbox" name="optradio" class="optradio" value="35">Comedy</label>
-      <label class="form-check form-check-inline text-mysize">
+      <label class="form-check form-check-npm install sweetalert2
+inline text-mysize">
         <i<input type="checkbox" name="optradio" class="optradio" value="80">Crime</label>
       <label class="form-check form-check-inline text-mysize">
           <input type="checkbox" name="optradio" class="optradio" value="99">Documentary</label>
@@ -145,16 +182,29 @@
 
 
     <!-- Done Button -->
-
+<!---------------------------------------------------------------------------------------->
     <div>
       <p button type="submit" class="btn btn-primary" id="doneBtn">DONE</p>
     </div>
 
-  </div>
+  </div>  <!---end of div class question-->
+<!-- ==========================
+    Start Footer Section
+=========================== -->
+<footer>
+    <div class="container">
+        &copy; Portfolio 2019.</a>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  
+  <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+          <script src="./js/members.js"></script>
+            <script>
+  function sweetalertclick(){
+    Swal('hello world!');
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
-
-</body>
-
-</html>
+  }
+  </script>
+    </body>
+  </html>

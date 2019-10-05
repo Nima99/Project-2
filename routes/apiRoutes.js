@@ -3,6 +3,9 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function(app) {
+  app.post("/api/home", passport.authenticate("local"), function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json(req.user);
   });
@@ -27,7 +30,7 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-  // Route for getting some data about our user to be used client side
+  ///////////// Route for getting some data about our user to be used client side
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
