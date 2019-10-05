@@ -3,6 +3,12 @@ form.login {
   margin-top: 50px;
 }
 
+#questionConatiner {
+  background-color: white;
+  opacity: .5;
+  width: 800px;
+}
+
 #bgColor {
   background-color: #010210;
 }
