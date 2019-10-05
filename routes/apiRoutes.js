@@ -75,10 +75,17 @@ module.exports = function(app) {
   });
 
   /////// Pre-Given Code Below- Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+  app.post("/api/shuffle", function(req, res) {
+    db.tv_show_db
+      .findAll({
+        where: {
+          season: req.body.season,
+          episode: req.body.episode
+        }
+      })
+      .then(function(dbTvShows) {
+        res.json(dbTvShows);
+      });
   });
 
   // Create a new example

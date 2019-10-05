@@ -2,12 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Members Only</title>
+  
+  <title>BS - Members Only</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href= "node_modules/sweetalert2/dist/sweetalert2.css" rel="stylesheet"/>
-  <link href="./styles/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href= "/node_modules/sweetalert2/dist/sweetalert2.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link href="/styles/members.css" rel="stylesheet">
+
   
 </head>
 
@@ -35,17 +38,13 @@
       <!--------------------End Of Naviagtion Bar------------------------>
 <!---------------->
 
-<div class= "container">
-  <h1>Sweet Alert</h1>
-  <button onclick="sweetalertclick()" type="button" class="w3-button w3-blue">try me!</button>
-</div>
   <!---------------->
    
   <!---------------->
 
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-5 col-md-offset-3">
         <h2>Welcome <span class="member-name"></span></h2>
       </div>
     </div>
@@ -175,18 +174,52 @@
         </div>
       </div>
     </div>
+    <!-- <div class="col-md-5 col-lg-5 bg-primary">
+      <div class="row container">
+        <h2>The Office</h2>
+        <div> 
+          <p button type="submit" class="btn btn-primary" id="shuffleBtn">Shuffle Button</p> 
+        </div>
+        <div>
+
+
+        </div>
+      </div>
+    </div> -->
   </div> 
+  </div>
+  </div>
+
+  <div class="modal" id="resultsModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newFriendName"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="titlediv">
+          <h1 id="movieName"></h1>            
+        </div>
+        <div class="modal-body" id="imagediv">
+          <img id="movieImage" style="width: 29rem">            
+        </div>
+        <div class="modal-footer">
+          <button id="finished" type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
 
   </div>
+
 
   
-  <div>
-    <p button type="submit" class="btn btn-primary" id="doneBtn">Shuffle Button</p>
-  </div>
 
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Done Button -->
@@ -196,21 +229,10 @@
 <!-- ==========================
     Start Footer Section
 =========================== -->
-<footer>
-    <div class="container">
-        &copy; Portfolio 2019.</a>
-    </div>
-  </footer>
   <!-- End Footer -->
   
   <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-          <script src="./js/members.js"></script>
-            <script>
-  function sweetalertclick(){
-    Swal('hello world!');
-
-  }
-  </script>
+  <script src="./js/members.js"></script>
 
   <script type="text/javascript">
     var genreArr = [];
@@ -249,6 +271,30 @@
       console.log($(this).val())
     } );
 
+    // $("#shuffleBtn").on("click", function (event) {
+    //   event.preventDefault();
+    //   var season = Math.floor(Math.random() * 2 + 1);
+    //   var episode;
+    //   if (season === 1) {
+    //     episode = Math.floor(Math.random() * 6 + 1);
+    //   } else {
+    //     episode = Math.floor(Math.random() * 22 + 1);
+    //   }
+
+    //   var newShuffle = {
+    //     season: season,
+    //     episode: episode
+    //   }
+
+    //   $.ajax({
+    //     type: "POST",
+    //     url: "/api/shuffle",
+    //     data: newShuffle
+    //   }).done(function (data){
+    //     console.log(data)
+    //   })
+    // });
+
     $("#doneBtn").on("click", function (event) {
       event.preventDefault();
       var newSurvey = {
@@ -267,25 +313,19 @@
       })
       .done(function (data) {
         console.log(data);
-        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-        // $("#newFriendName").text(data.name);
-        // $("#newFriendImg").attr("src", data.photo);
-      })
- 
-      // $.post("/api/daily-survey-results", newSurvey).done(function (data) {
-      //   console.log(data);
-      //   // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-      //   // $("#newFriendName").text(data.name);
-      //   // $("#newFriendImg").attr("src", data.photo);
 
-      // });
+        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+        $("#movieName").text(data.results[0].title);
+        var posterPath = data.results[0].poster_path;
+        $("#movieImage").attr("src", `https://image.tmdb.org/t/p/w500${posterPath}`);
+
+
+        $("#resultsModal").modal("toggle");
+      })
+    
     });
 
-
-
-
   </script>
-
 
 
 </body>

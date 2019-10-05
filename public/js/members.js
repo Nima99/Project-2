@@ -8,11 +8,6 @@ $(document).ready(function() {
   });
 });
 
-function sweetalertclick(){
-  Swal('Hello World!')
-}
-
-
 // When user hits the search-btn
 $("#search-btn").on("click", function(event) {
   event.preventDefault();
@@ -53,4 +48,3 @@ function renderShows(data) {
     }
   }
 }
-

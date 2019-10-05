@@ -13,7 +13,7 @@ CREATE TABLE tvShows (
   season INTEGER(255) NOT NULL,
   episode INTEGER(255) NOT NULL,
   episode_name varchar(255) NOT NULL,
-  episode_plot varchar(255) NOT NULL,
+  episode_plot varchar() NOT NULL,
   PRIMARY KEY (id)
 );
 
