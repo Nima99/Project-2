@@ -5,6 +5,9 @@ var passport = require("../config/passport");
 var axios = require("axios");
 
 module.exports = function(app) {
+  app.post("/api/home", passport.authenticate("local"), function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json(req.user);
   });
@@ -29,7 +32,7 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-  // Route for getting some data about our user to be used client side
+  ///////////// Route for getting some data about our user to be used client side
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
@@ -72,10 +75,17 @@ module.exports = function(app) {
   });
 
   /////// Pre-Given Code Below- Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+  app.post("/api/shuffle", function(req, res) {
+    db.tv_show_db
+      .findAll({
+        where: {
+          season: req.body.season,
+          episode: req.body.episode
+        }
+      })
+      .then(function(dbTvShows) {
+        res.json(dbTvShows);
+      });
   });
 
   // Create a new example

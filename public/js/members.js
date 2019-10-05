@@ -4,9 +4,6 @@ $(document).ready(function() {
   $.get("/api/user_data").then(function(data) {
     $(".member-name").text(data.name);
   });
-  Particles.init({
-    selector: ".background"
-  });
 });
 
 // When user hits the search-btn
