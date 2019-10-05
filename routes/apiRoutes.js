@@ -65,10 +65,10 @@ module.exports = function(app) {
 
     movieURL += "&primary_release_date.gte=" + req.body.year; // newSurvey.answers[3]
 
-    return res.json(movieURL);
-    // axios(movieURL).then(function(response) {
-    //   return res.json(response.data);
-    // });
+    // return res.json(movieURL);
+    axios(movieURL).then(function(response) {
+      return res.json(response.data);
+    });
   });
 
   /////// Pre-Given Code Below- Get all examples
