@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -5,6 +7,10 @@ $(document).ready(function() {
     $(".member-name").text(data.name);
   });
 });
+
+function sweetalertclick(){
+  Swal('Hello World!')
+}
 
 
 // When user hits the search-btn
