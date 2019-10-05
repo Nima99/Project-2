@@ -8,7 +8,7 @@ User will also be asked to answer a quick survey in order to predict suggestions
 
 # Sketch
 
-
+https://files.slack.com/files-pri/THMCEKQRF-FNTF71PHV/image.png
 
 # APIS USED
 - http://www.movie-api-tv.com/

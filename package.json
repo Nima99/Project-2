@@ -11,6 +11,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcrypt": "^3.0.6",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.0.0",
@@ -21,7 +22,9 @@
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.19.0"
+    "sequelize": "^5.19.0",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^8.18.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
