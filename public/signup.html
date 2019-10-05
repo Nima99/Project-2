@@ -2,49 +2,60 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Binge Shuffle</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
+<body id="bgColor">
+  
+  <div class="fullscreen-bg" id="videoBlock">
+    <video class="fullscreen-bg-video" id="video" preload="auto" autoplay="autoplay" loop = "loop"> 
+      <source autoplay="autoplay" src= "https://www.videvo.net/videvo_files/converted/2013_09/preview/DiscoLightsVidevo.mov17335.mp4" type="video/mp4">
+      <source autoplay="autoplay" src= "https://www.videvo.net/videvo_files/converted/2013_09/preview/DiscoLightsVidevo.mov17335.webm" type="video/webm">
+      <source autoplay="autoplay" src= "https://www.videvo.net/videvo_files/converted/2013_09/preview/DiscoLightsVidevo.mov17335.ogg" type="video/ogg">
+    </video>
+  </div>
+    <nav class="navbar navbar-default text-white">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        </div>
       </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
+    </nav>
+    <div class="container text-white" id="test-container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2>Sign Up Form</h2>
+          <form class="signup">
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Name</label>
+                  <input type="name" class="form-control" id="name-input" placeholder="John Doe">
+                </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Name</label>
-                <input type="name" class="form-control" id="name-input" placeholder="John Doe">
-              </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="email-input" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="password-input" placeholder="Password">
+            </div>
+            <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Error:</span> <span class="msg"></span>
+            </div>
+            <button type="submit" class="btn btn-default text-white bg-secondary">Sign Up</button>
+          </form>
+          <br />
+          <p>Or log in <a href="/login">here</a></p>
+        </div>
       </div>
     </div>
   </div>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/signup.js"></script>
 

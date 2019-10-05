@@ -2,6 +2,8 @@ var db = require("../models");
 //requiring passport
 var passport = require("../config/passport");
 
+var axios = require("axios");
+
 module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json(req.user);
@@ -41,6 +43,32 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  // Hit on the movie database
+
+  app.post("/api/daily-survey-results", function(req, res) {
+    // save req.body to database
+
+    var movieURL =
+      "https://api.themoviedb.org/3/discover/movie?api_key=362b6936916611f650df82861a545e72&language=en-US&include_video=true&sort_by=popularity.desc";
+
+    movieURL += "&include_adult=" + req.body.adult; // newSurvey.answers[0]
+
+    var withGenre = req.body.genre.join("%2C%");
+
+    movieURL += "&with_genres=" + withGenre; // newSurvey.answers[1]
+
+    var withoutGenre = req.body.notGenre.join("%2C%");
+
+    movieURL += "&without_genres=" + withoutGenre; // newSurvey.answers[2]
+
+    movieURL += "&primary_release_date.gte=" + req.body.year; // newSurvey.answers[3]
+
+    // return res.json(movieURL);
+    axios(movieURL).then(function(response) {
+      return res.json(response.data);
+    });
   });
 
   /////// Pre-Given Code Below- Get all examples

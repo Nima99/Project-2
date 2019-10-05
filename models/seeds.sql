@@ -1,3 +1,4 @@
+
 INSERT INTO theOffice (season, episode, episode_name, episode_plot) VALUES ('1', '1', 'Pilot', 'When a documentary crew arrives at Mifflin, manager Michael Scott attempts to paint a rosy picture but fails after learning the company will be downsizing.');
 
 INSERT INTO theOffice (season, episode, episode_name, episode_plot) VALUES ('1', '2', 'Diversity Day', 'Michael tells everyone it was his idea to hire a special consultant (Larry Wilmore) to teach racial tolerance and diversity, when in fact it was his behavior that necessitated the training.');
@@ -325,3 +326,4 @@ INSERT INTO Parks_and_Recreation (season, episode, episode_name, episode_plot) V
 INSERT INTO Parks_and_Recreation (season, episode, episode_name, episode_plot) VALUES ('6', '21', 'Moving Up: Part 1', 'Leslie debates whether to take the job with the National Parks Service during a convention in San Francisco while Ben tries to get free wifi for Pawnee. Meanwhile in Pawnee, Tom decides to open his bistro early.');
 
 INSERT INTO Parks_and_Recreation (season, episode, episode_name, episode_plot) VALUES ('6', '22', 'Moving Up: Part 2', 'During the Unity Concert, Leslie invites some coworkers to join her at her new job in Chicago, while Andy thinks about reuniting Mouse Rat. Meanwhile, Toms Bistro prepares for the Unity Concert after-party.');
+

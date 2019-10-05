@@ -6,6 +6,7 @@ $(document).ready(function() {
   });
 });
 
+
 // When user hits the search-btn
 $("#search-btn").on("click", function(event) {
   event.preventDefault();
@@ -46,3 +47,4 @@ function renderShows(data) {
     }
   }
 }
+
